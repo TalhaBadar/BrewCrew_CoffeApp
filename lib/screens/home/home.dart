@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/models/brew.dart';
-import 'package:flutter_application_2/models/myuser.dart';
 import 'package:flutter_application_2/screens/home/brew_list.dart';
 import 'package:flutter_application_2/services/auth.dart';
 import 'package:flutter_application_2/services/database.dart';
@@ -8,15 +7,15 @@ import 'package:provider/provider.dart';
 
 
 class Home extends StatelessWidget {
-   Home({super.key});
+
   final AuthService _auth= AuthService();
+
+  Home({super.key});
   @override
   Widget build(BuildContext context) {
-     final user = Provider.of<MyUser?>(context);
-
-    return StreamProvider<List<Brew?>?>.value(
-      value: user != null ? DatabaseService(uid: user.uid!).brews : const Stream<List<Brew>>.empty(),
-      initialData: null,
+    return StreamProvider<List<Brew>>.value(
+      value: DatabaseService().brews,
+       initialData: const [],
       child: Scaffold(
       backgroundColor: Colors.brown[50],
       appBar: AppBar(
@@ -33,7 +32,7 @@ class Home extends StatelessWidget {
              )
           ],
     ),
-    body:  BrewList(),
+    body:  const BrewList(),
     ),
     );
   }

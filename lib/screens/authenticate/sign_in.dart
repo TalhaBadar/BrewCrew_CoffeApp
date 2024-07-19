@@ -4,8 +4,8 @@ import 'package:flutter_application_2/shared/constants.dart';
 import 'package:flutter_application_2/shared/loading.dart';
 
 class SignIn extends StatefulWidget {
-  final Function toggleView;
-  const SignIn({super.key, required this.toggleView});
+  final Function? toggleView;
+  const SignIn({this.toggleView});
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -130,7 +130,7 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                         const SizedBox(height: 20.0),
                         TextButton(
                           onPressed: () {
-                            widget.toggleView();
+                            widget.toggleView!();
                           },
                           child: const Text(
                             'Don\'t have an account? Register here',

@@ -4,8 +4,8 @@ import 'package:flutter_application_2/shared/constants.dart';
 import 'package:flutter_application_2/shared/loading.dart';
 
 class Register extends StatefulWidget {
-  final Function toggleView;
-  const Register({super.key, required this.toggleView});
+  final Function? toggleView;
+  const Register({this.toggleView});
 
   @override
   State<Register> createState() => _RegisterState();
@@ -112,7 +112,7 @@ class _RegisterState extends State<Register> with SingleTickerProviderStateMixin
                           onPressed: () async {
                             if (_formKey.currentState!.validate()) {
                               setState(() => loading = true);
-                              dynamic result = await _auth.creatUserWithEmailAndPassword(
+                              dynamic result = await _auth.createUserWithEmailAndPassword(
                                   email, password);
                               if (result == null) {
                                 setState(() {
@@ -139,7 +139,7 @@ class _RegisterState extends State<Register> with SingleTickerProviderStateMixin
                             ),
                           ),
                           onPressed: () {
-                            widget.toggleView();
+                            widget.toggleView!();
                           },
                         ),
                       ],
