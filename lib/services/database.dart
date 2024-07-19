@@ -24,6 +24,7 @@ List<Brew> _brewListFromSnapshot(QuerySnapshot snapshot) {
       name: dataz["Name"] ?? '',
       strength: dataz['Strength'] ?? 0,
       sugars: dataz['Sugars'] ?? '0',
+      userId: docz.id,
     );
   }).toList();
 }
