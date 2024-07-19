@@ -5,7 +5,7 @@ import 'package:flutter_application_2/shared/loading.dart';
 
 class SignIn extends StatefulWidget {
   final Function? toggleView;
-  const SignIn({this.toggleView});
+  const SignIn({super.key, this.toggleView});
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -71,7 +71,7 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                         FadeTransition(
                           opacity: _animation,
                           child: TextFormField(
-                            decoration: textInputDecoartion.copyWith(hintText: 'Email'),
+                            decoration: textInputDecoration.copyWith(hintText: 'Email'),
                             style: const TextStyle(
                               fontFamily: 'Cyberpunk',
                               color: Colors.cyanAccent),
@@ -85,7 +85,7 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                         FadeTransition(
                           opacity: _animation,
                           child: TextFormField(
-                            decoration: textInputDecoartion.copyWith(hintText: 'Password'),
+                            decoration: textInputDecoration.copyWith(hintText: 'Password'),
                             style: const TextStyle(
                               fontFamily: 'Cyberpunk',
                               color: Colors.cyanAccent),

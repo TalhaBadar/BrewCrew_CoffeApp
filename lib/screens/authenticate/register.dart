@@ -5,7 +5,7 @@ import 'package:flutter_application_2/shared/loading.dart';
 
 class Register extends StatefulWidget {
   final Function? toggleView;
-  const Register({this.toggleView});
+  const Register({super.key, this.toggleView});
 
   @override
   State<Register> createState() => _RegisterState();
@@ -71,7 +71,7 @@ class _RegisterState extends State<Register> with SingleTickerProviderStateMixin
                         FadeTransition(
                           opacity: _animation,
                           child: TextFormField(
-                            decoration: textInputDecoartion.copyWith(hintText: 'Email'),
+                            decoration: textInputDecoration.copyWith(hintText: 'Email'),
                             style: const TextStyle(
                               fontFamily: 'Cyberpunk',
                               color: Colors.cyanAccent),
@@ -85,7 +85,7 @@ class _RegisterState extends State<Register> with SingleTickerProviderStateMixin
                         FadeTransition(
                           opacity: _animation,
                           child: TextFormField(
-                            decoration: textInputDecoartion.copyWith(hintText: 'Password'),
+                            decoration: textInputDecoration.copyWith(hintText: 'Password'),
                             style: const TextStyle(
                               fontFamily: 'Cyberpunk',
                               color: Colors.cyanAccent),

@@ -3,7 +3,7 @@ import 'package:flutter_application_2/models/brew.dart';
 
 class BrewTile extends StatelessWidget {
   final Brew? brew;
-  const BrewTile({ this.brew});
+  const BrewTile({super.key,  this.brew});
   @override
   Widget build(BuildContext context) {
     return Padding(

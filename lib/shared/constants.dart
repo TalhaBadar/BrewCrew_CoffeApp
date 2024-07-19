@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
- InputDecoration textInputDecoartion =  InputDecoration(
+ InputDecoration textInputDecoration =  InputDecoration(
                               hintStyle: const TextStyle(color: Colors.cyanAccent),
                               fillColor: Colors.black54,
                               filled: true,
