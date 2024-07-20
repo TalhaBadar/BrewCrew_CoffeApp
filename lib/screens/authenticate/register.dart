@@ -54,7 +54,7 @@ class _RegisterState extends State<Register> with SingleTickerProviderStateMixin
             body: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/cyberpunk_background2.jpg'),
+                  image: AssetImage('assets/coffebeansss.png'),
                   fit: BoxFit.cover,
                 ),
               ),

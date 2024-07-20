@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/models/myuser.dart';
 import 'package:flutter_application_2/services/database.dart';
-import 'package:flutter_application_2/shared/constants.dart';
 import 'package:flutter_application_2/shared/loading.dart';
 import 'package:provider/provider.dart';
 
@@ -38,35 +37,36 @@ class _SettingsFormState extends State<SettingsForm> {
               child: Column(
                 children: <Widget>[
                   const Text(
-                    'Update your Brew settings.',
+                    'Update your Brew settings',
                     style: TextStyle(fontSize: 18.0,
                     fontFamily: 'Cyberpunk',
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 141, 214, 243),
+                    color: Colors.black,
                     ),
                   ),
-                  const SizedBox(height:20.0),
+                  const SizedBox(height:30.0),
                   TextFormField(
                     cursorColor: Colors.brown[800],
+                   
                     initialValue: userData!.name,
                     decoration: InputDecoration(
-                              hintStyle: const TextStyle(color: Colors.cyanAccent),
+                              hintStyle: const TextStyle(color: Colors.white),
                               fillColor: Colors.black54,
                               
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0),
                                 borderSide:
-                                    const BorderSide(color: Colors.white, width: 2.0),
+                                    const BorderSide(color: Colors.black, width: 3.0),
                               ),
                               focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(25.0),
                                 borderSide:
-                                    const BorderSide(color: Color.fromARGB(255, 115, 43, 17), width: 2.0),
+                                    const BorderSide(color: Colors.white, width: 3.0),
                               ),
                             ),
                             style: const TextStyle(
                               fontFamily: 'Cyberpunk',
-                              color: Color.fromARGB(255, 141, 214, 243),
+                              color: Colors.white,
                             ),
                     validator: (val) => val!.isEmpty ? 'Please enter a name' : null,
                     onChanged: (val) =>setState(()=> _currentName = val),
@@ -74,31 +74,42 @@ class _SettingsFormState extends State<SettingsForm> {
                   const SizedBox(height: 30.0,),
                   //dropdown
                   DropdownButtonFormField(
+                    dropdownColor: Colors.black,
+                    focusColor: Colors.grey[900],
                     decoration: InputDecoration(
                               
-                              hintStyle: const TextStyle(color: Colors.cyanAccent),
+                              hintStyle: const TextStyle(color: Colors.white),
                               fillColor: Colors.black54,
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0),
                                 borderSide:
-                                    const BorderSide(color: Colors.white, width: 2.0),
+                                    const BorderSide(color: Colors.black, width: 3.0),
                               ),
                               focusedBorder: OutlineInputBorder(
+                              
                               borderRadius: BorderRadius.circular(25.0),
                                 borderSide:
-                                    const BorderSide(color: Color.fromARGB(255, 115, 43, 17), width: 2.0),
+                                    const BorderSide(color: Colors.white, width: 2.0),
+                                    
                               ),
                             ),
+                            
                             style: const TextStyle(
                               fontFamily: 'Cyberpunk',
-                              color: Color.fromARGB(255, 141, 214, 243),
+                              color: Colors.white,
                             ),
                     value: _currentSugars?? userData.sugars,
                     items: sugars.map((sugar){
                       return DropdownMenuItem(
+                        
                         value: sugar,
                         child: Text(
-                          sugar == '1' ? '$sugar sugar':'$sugar sugars' ),
+                          sugar == '1' ? '$sugar sugar':'$sugar sugars',
+                          style: const TextStyle(
+                            color: Colors.white,
+                          ), 
+                          ),
+                      
                       );
                     }).toList(),
                     onChanged: (val) => setState(() => _currentSugars = val as String),
@@ -114,13 +125,13 @@ class _SettingsFormState extends State<SettingsForm> {
                     divisions: 8,
                     onChanged: (val) => setState(()=> _currentStrength= val.round()) , 
                     ),
-                    const SizedBox(height: 40.0),
+                    const SizedBox(height: 25.0),
                   ElevatedButton(
                     
                     style: ElevatedButton.styleFrom(
                       
                         foregroundColor: Colors.white,
-                        backgroundColor: Color.fromARGB(255, 141, 214, 243),
+                        backgroundColor: Colors.black,
                         shadowColor: Colors.black,
                         elevation: 10
                         ),
@@ -128,6 +139,7 @@ class _SettingsFormState extends State<SettingsForm> {
                       'Update',
                       style: TextStyle(
                         color: Colors.white,
+                        fontFamily: 'Cyberpunk',
                         shadows: [
                 Shadow(
                   // bottomLeft
@@ -162,7 +174,8 @@ class _SettingsFormState extends State<SettingsForm> {
                              Navigator.pop(context);
                        }
                         },
-                      )
+                      ),
+                      const SizedBox(height: 10.0),
                 ],
               ),
             ),

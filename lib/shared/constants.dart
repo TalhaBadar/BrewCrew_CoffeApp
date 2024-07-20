@@ -7,11 +7,11 @@ import 'package:flutter/material.dart';
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25.0),
                                 borderSide:
-                                    const BorderSide(color: Colors.cyanAccent, width: 2.0),
+                                    const BorderSide(color: Colors.white, width: 2.0),
                               ),
                               focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(25.0),
                                 borderSide:
-                                    const BorderSide(color: Colors.purpleAccent, width: 2.0),
+                                    const BorderSide(color: Colors.redAccent, width: 2.0),
                               ),
                             );

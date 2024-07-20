@@ -48,7 +48,7 @@ class Home extends StatelessWidget {
           elevation: 0.0,
           actions: <Widget>[
             PopupMenuButton<String>(
-              icon: const Icon(Icons.menu_rounded, color: Colors.white),
+              icon: const Icon(Icons.menu_open, color: Colors.white),
               onSelected: (value) async {
                 if (value == 'logout') {
                   await _auth.signOut();
@@ -64,7 +64,7 @@ class Home extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: const Row(
                         children: <Widget>[
-                          Icon(Icons.edit, color: Colors.black),
+                          Icon(Icons.coffee_sharp, color: Colors.black),
                           SizedBox(width: 8.0),
                           Text('Update my brew'),
                         ],
@@ -97,7 +97,7 @@ class Home extends StatelessWidget {
             Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/coffee_bg.png'),
+                  image: AssetImage('assets/coffebeans.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
