@@ -19,7 +19,7 @@ class _LoadingState extends State<Loading> {
   }
 
   void _startTimer() {
-    Timer(const Duration(seconds: 20), () {
+    Timer(const Duration(seconds: 7), () {
       if (mounted) {
         setState(() {
           _isError = true;
